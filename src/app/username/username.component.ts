@@ -1,0 +1,17 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-username',
+  templateUrl: './username.component.html',
+  styleUrls: ['./username.component.css'],
+})
+export class UsernameComponent {
+  emptyInput = false;
+
+  username = '';
+
+  onResetInput() {
+    this.emptyInput = true;
+    this.username = '';
+  }
+}
