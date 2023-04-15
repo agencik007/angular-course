@@ -6,12 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./username.component.css'],
 })
 export class UsernameComponent {
-  emptyInput = false;
-
   username = '';
 
   onResetInput() {
-    this.emptyInput = true;
     this.username = '';
   }
 }
