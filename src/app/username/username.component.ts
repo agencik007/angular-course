@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class UsernameComponent {
   username = '';
 
-  onResetInput() {
+  resetInput() {
     this.username = '';
   }
 }
