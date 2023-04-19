@@ -11,6 +11,6 @@ export class ExerciseComponent {
 
   onButtonClick(){
     this.show = !this.show;
-    this.buttonClickedCounter.push(this.buttonClickedCounter.length + 1);
+    this.buttonClickedCounter.push(new Date());
   }
 }
