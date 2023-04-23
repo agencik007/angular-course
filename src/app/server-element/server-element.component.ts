@@ -1,10 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-export interface ServerElement {
-    name: string;
-    type?: string;
-    content: string;
-}
+import { ServerElement } from '../types/server.element.type';
 
 @Component({
     selector: 'app-server-element',

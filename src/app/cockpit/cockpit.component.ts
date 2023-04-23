@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ServerElement } from '../server-element/server-element.component';
+import { ServerElement } from '../types/server.element.type';
 
 @Component({
     selector: 'app-cockpit',
@@ -8,7 +8,7 @@ import { ServerElement } from '../server-element/server-element.component';
 })
 export class CockpitComponent {
     @Output() serverCreated = new EventEmitter<ServerElement>();
-    @Output() blueprintCreated = new EventEmitter<ServerElement>();
+    @Output('bpCreated') blueprintCreated = new EventEmitter<ServerElement>();
     newServerName = '';
     newServerContent = '';
 
