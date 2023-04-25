@@ -23,11 +23,12 @@ export class AppComponent {
         });
     }
 
-    onBlueprintAdded(bleuprintData: ServerElement) {
+    onBlueprintAdded(blueprintData: ServerElement) {
         this.serverElements.push({
             type: 'blueprint',
-            name: bleuprintData.name,
-            content: bleuprintData.content,
+            name: blueprintData.name,
+            content: blueprintData.content,
         });
     }
 }
+

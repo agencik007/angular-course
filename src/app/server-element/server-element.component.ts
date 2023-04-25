@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { ServerElement } from '../types/server.element.type';
 
 @Component({
