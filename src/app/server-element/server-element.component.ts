@@ -5,11 +5,14 @@ import {
     AfterViewInit,
     Component,
     DoCheck,
+    ElementRef,
     Input,
     OnChanges,
     OnDestroy,
     OnInit,
     SimpleChanges,
+    ViewChild,
+    ContentChild,
 } from '@angular/core';
 import { ServerElement } from '../types/server.element.type';
 
@@ -31,6 +34,8 @@ export class ServerElementComponent
 {
     @Input('srvElement') element: ServerElement;
     @Input() name: string;
+    @ViewChild('heading', { static: true }) header: ElementRef;
+    @ContentChild('paragraph', { static: true }) paragraph: ElementRef;
 
     constructor() {
         console.log('constructor runs');
@@ -43,6 +48,14 @@ export class ServerElementComponent
 
     ngOnInit() {
         console.log('ngOnInit runs');
+        console.log(
+            'TextContent is not available before initialization ngAfterViewInit' +
+                this.header.nativeElement.textContent
+        );
+        console.log(
+            'Parapgrap is not available before initialization ngAfterContentInit' +
+                this.paragraph.nativeElement.textContent
+        );
     }
 
     ngDoCheck(): void {
@@ -51,6 +64,10 @@ export class ServerElementComponent
 
     ngAfterContentInit(): void {
         console.log('ngAfterContentInit runs');
+        console.log(
+            'Paragraph is now available: ' +
+                this.paragraph.nativeElement.textContent
+        );
     }
 
     ngAfterContentChecked(): void {
@@ -59,6 +76,10 @@ export class ServerElementComponent
 
     ngAfterViewInit(): void {
         console.log('ngAfterViewInit runs');
+        console.log(
+            'TextContent is now available: ' +
+                this.header.nativeElement.textContent
+        );
     }
 
     ngAfterViewChecked(): void {
